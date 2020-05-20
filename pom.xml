@@ -41,6 +41,14 @@
                     </profiles>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -59,6 +67,15 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <version>2.2.5.RELEASE</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+            <scope>test</scope>
+        </dependency>
+
 
 
     </dependencies>
