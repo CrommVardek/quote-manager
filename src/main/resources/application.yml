@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: Quote-Provider-Bot
+authorsPath: src/resources/AuthorsQuotes

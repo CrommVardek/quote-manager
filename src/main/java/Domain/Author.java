@@ -2,6 +2,7 @@ package Domain;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.function.Predicate;
 
 public class Author {
 
@@ -20,6 +21,15 @@ public class Author {
             .findAny()
             .get()
             .getText();
+    }
+
+    public void addQuote(Quote quote){
+        Predicate<Quote> equal = q -> q.equals(quote);
+        if(!(quotes.stream().anyMatch(equal))) quotes.add(new Quote(quote.getText()));
+    }
+
+    public String getName(){
+        return authorName;
     }
 
 }
