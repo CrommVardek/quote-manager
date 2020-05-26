@@ -1,7 +1,7 @@
-package Services;
+package com.crommvardek.quoteproviderbot.services;
 
-import Domain.Author;
-import Domain.Quote;
+import com.crommvardek.quoteproviderbot.domain.Author;
+import com.crommvardek.quoteproviderbot.domain.Quote;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

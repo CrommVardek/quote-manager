@@ -1,6 +1,7 @@
-package WebClient;
+package com.crommvardek.quoteproviderbot.webclient;
 
-import Domain.PrivateMessage;
+import com.crommvardek.quoteproviderbot.domain.PrivateMessage;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -19,8 +20,18 @@ public class RedditClient {
     }
 
     public Flux<PrivateMessage> getUnreadMessages(){
-        webClient.get()
-                .uri
+        return webClient.get()
+                .uri(REDDIT_URI + "/message/unread")
+                .retrieve()
+                .bodyToFlux(JsonNode.class)
+                .parallel()
+                .map(this::map)
+                .sequential();
+    }
+
+    private PrivateMessage map(JsonNode jn){
+        //TODO
+        return new PrivateMessage();
     }
 
 }

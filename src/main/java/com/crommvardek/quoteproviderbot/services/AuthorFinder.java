@@ -1,7 +1,7 @@
-package Services;
+package com.crommvardek.quoteproviderbot.services;
 
-import Domain.Author;
-import Domain.Exceptions.AuthorDoesNotExistsException;
+import com.crommvardek.quoteproviderbot.domain.Author;
+import com.crommvardek.quoteproviderbot.domain.Exceptions.AuthorDoesNotExistsException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package Domain;
+package com.crommvardek.quoteproviderbot.domain;
 
 public class Quote {
 

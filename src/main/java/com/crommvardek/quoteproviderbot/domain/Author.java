@@ -1,4 +1,4 @@
-package Domain;
+package com.crommvardek.quoteproviderbot.domain;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
