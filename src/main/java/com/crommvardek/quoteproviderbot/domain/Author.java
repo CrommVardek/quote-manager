@@ -14,13 +14,12 @@ public class Author {
         this.authorName = authorName;
     }
 
-    public String getAnyQuote(){
+    public Quote getAnyQuote(){
         return quotes
             .stream()
             .sorted((o1, o2) -> ThreadLocalRandom.current().nextInt(-1, 2))
             .findAny()
-            .get()
-            .getText();
+            .get();
     }
 
     public void addQuote(Quote quote){

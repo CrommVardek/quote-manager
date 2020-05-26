@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.function.Consumer;
 
 @Service
 public class QuoteProvider {
@@ -19,7 +20,7 @@ public class QuoteProvider {
         this.authorsPath = authorsPath;
     }
 
-    public String getQuote(Author author){
+    public Quote getQuote(Author author){
         loadQuotes(author);
         return author.getAnyQuote();
     }
