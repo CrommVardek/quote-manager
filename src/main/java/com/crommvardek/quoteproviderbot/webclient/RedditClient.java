@@ -25,7 +25,7 @@ public class RedditClient {
 
     public Flux<PrivateMessage> getUnreadMessages(){
         return webClient.get()
-                .uri(REDDIT_URI + "/message/unread/.json")
+                .uri(REDDIT_URI + "/message/unread/.json?feed=90d58608de8022044718cc00a28a869f2f1a065e&user=QuotesProviderBot")
                 .retrieve()
                 .bodyToFlux(JsonNode.class)
                 .parallel()
