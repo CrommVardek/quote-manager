@@ -1,5 +1,6 @@
 package com.crommvardek.quoteproviderbot.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Predicate;
@@ -12,6 +13,7 @@ public class Author {
 
     public Author(String authorName) {
         this.authorName = authorName;
+        quotes = new ArrayList<>();
     }
 
     public Quote getAnyQuote(){
