@@ -41,5 +41,5 @@ buildNumber.properties
 .mvn/timing.properties
 
 #application properties
-src/resources/application.yml
+src/main/resources/application.yml
 
