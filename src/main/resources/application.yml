@@ -1,4 +1,14 @@
 spring:
   application:
     name: Quote-Provider-Bot
-authorsPath: src/resources/AuthorsQuotes
+  security:
+    oauth2:
+      client:
+        registration:
+          reddit:
+            clientId:
+            clientSecret:
+
+authorsPath: src/main/resources/AuthorsQuotes
+botName: QuotesProviderBot
+redditUrl: www.reddit.com

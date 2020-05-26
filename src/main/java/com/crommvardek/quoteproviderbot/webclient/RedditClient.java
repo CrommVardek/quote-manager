@@ -1,6 +1,7 @@
 package com.crommvardek.quoteproviderbot.webclient;
 
 import com.crommvardek.quoteproviderbot.domain.PrivateMessage;
+import com.crommvardek.quoteproviderbot.domain.mapper.JsonNodeToModelMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -10,28 +11,26 @@ import reactor.core.publisher.Flux;
 @Service
 public class RedditClient {
 
+    private final JsonNodeToModelMapper mapper;
+
     private final WebClient webClient;
 
     private final String REDDIT_URI;
 
-    public RedditClient(WebClient webClient, @Value("${redditUrl}") String reddit_uri){
+    public RedditClient(JsonNodeToModelMapper mapper, WebClient webClient, @Value("${redditUrl}") String reddit_uri){
+        this.mapper = mapper;
         this.webClient = webClient;
         REDDIT_URI = reddit_uri;
     }
 
     public Flux<PrivateMessage> getUnreadMessages(){
         return webClient.get()
-                .uri(REDDIT_URI + "/message/unread")
+                .uri(REDDIT_URI + "/message/unread/.json")
                 .retrieve()
                 .bodyToFlux(JsonNode.class)
                 .parallel()
-                .map(this::map)
+                .map(jsonNode -> mapper.map(jsonNode, PrivateMessage.class))
                 .sequential();
-    }
-
-    private PrivateMessage map(JsonNode jn){
-        //TODO
-        return new PrivateMessage();
     }
 
 }

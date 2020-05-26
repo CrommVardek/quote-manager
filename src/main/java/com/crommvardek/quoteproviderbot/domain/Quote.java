@@ -17,4 +17,8 @@ public class Quote {
         return ((o instanceof Quote) && (((Quote) o).getText().equals(getText())));
     }
 
+    @Override
+    public int hashCode() {
+        return quoteText.hashCode();
+    }
 }
