@@ -1,6 +1,6 @@
 package com.crommvardek.quoteproviderbot.services;
 
-import com.crommvardek.quoteproviderbot.domain.Exceptions.AuthorDoesNotExistsException;
+import com.crommvardek.quoteproviderbot.domain.exceptions.AuthorDoesNotExistsException;
 import com.crommvardek.quoteproviderbot.domain.PrivateMessage;
 import com.crommvardek.quoteproviderbot.webclient.RedditClient;
 import org.springframework.scheduling.annotation.Scheduled;

@@ -1,6 +1,6 @@
 package com.crommvardek.quoteproviderbot.controller;
 
-import com.crommvardek.quoteproviderbot.domain.Exceptions.AuthorDoesNotExistsException;
+import com.crommvardek.quoteproviderbot.domain.exceptions.AuthorDoesNotExistsException;
 import com.crommvardek.quoteproviderbot.domain.PrivateMessage;
 import com.crommvardek.quoteproviderbot.services.AuthorFinder;
 import com.crommvardek.quoteproviderbot.services.QuoteConsumer;
