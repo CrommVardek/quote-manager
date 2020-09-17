@@ -1,7 +1,7 @@
-package com.crommvardek.quoteproviderbot.services;
+package com.crommvardek.quotemanager.services;
 
-import com.crommvardek.quoteproviderbot.domain.Author;
-import com.crommvardek.quoteproviderbot.domain.Quote;
+import com.crommvardek.quotemanager.domain.Author;
+import com.crommvardek.quotemanager.domain.Quote;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.function.Consumer;
 
 @Service
 public class QuoteProvider {

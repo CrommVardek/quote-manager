@@ -1,4 +1,4 @@
-package com.crommvardek.quoteproviderbot;
+package com.crommvardek.quotemanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

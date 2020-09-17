@@ -1,4 +1,4 @@
-package com.crommvardek.quoteproviderbot.domain.mapper;
+package com.crommvardek.quotemanager.domain.mapper;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;

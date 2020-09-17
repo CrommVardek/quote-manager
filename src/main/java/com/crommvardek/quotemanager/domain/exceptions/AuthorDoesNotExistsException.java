@@ -1,4 +1,4 @@
-package com.crommvardek.quoteproviderbot.domain.exceptions;
+package com.crommvardek.quotemanager.domain.exceptions;
 
 public class AuthorDoesNotExistsException extends Exception {
 }

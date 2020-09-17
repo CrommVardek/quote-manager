@@ -2,7 +2,7 @@
 
 ## Description of the Bot
 
-The aim of the bot is to scan all comments made in Reddit. If the comment contains an author referenced by the bot, it will reply to the comment with a quote from the author.
+The aim of quote manager is to provide any quote from an author. It is used by the quote-writer.
 
 ## How to build
 

@@ -1,4 +1,4 @@
-package com.crommvardek.quoteproviderbot.domain;
+package com.crommvardek.quotemanager.domain;
 
 public class Comment {
 

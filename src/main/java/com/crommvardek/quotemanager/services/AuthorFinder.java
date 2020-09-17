@@ -1,7 +1,7 @@
-package com.crommvardek.quoteproviderbot.services;
+package com.crommvardek.quotemanager.services;
 
-import com.crommvardek.quoteproviderbot.domain.Author;
-import com.crommvardek.quoteproviderbot.domain.exceptions.AuthorDoesNotExistsException;
+import com.crommvardek.quotemanager.domain.Author;
+import com.crommvardek.quotemanager.domain.exceptions.AuthorDoesNotExistsException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +18,9 @@ public class AuthorFinder {
         this.authorsPath = authorsPath;
     }
 
-
     public Author getTheAuthor(String authorName) throws AuthorDoesNotExistsException {
+
+        //TODO search in database instead of the files
 
         Path authorFile = Paths.get(authorsPath, authorName + "_Quotes.txt");
 

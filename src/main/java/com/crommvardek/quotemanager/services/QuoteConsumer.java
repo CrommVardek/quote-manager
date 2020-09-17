@@ -1,6 +1,6 @@
-package com.crommvardek.quoteproviderbot.services;
+package com.crommvardek.quotemanager.services;
 
-import com.crommvardek.quoteproviderbot.domain.Quote;
+import com.crommvardek.quotemanager.domain.Quote;
 
 import java.util.function.Consumer;
 

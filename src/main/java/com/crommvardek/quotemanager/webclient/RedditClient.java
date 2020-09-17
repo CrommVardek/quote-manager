@@ -1,7 +1,7 @@
-package com.crommvardek.quoteproviderbot.webclient;
+package com.crommvardek.quotemanager.webclient;
 
-import com.crommvardek.quoteproviderbot.domain.PrivateMessage;
-import com.crommvardek.quoteproviderbot.domain.mapper.JsonNodeToModelMapper;
+import com.crommvardek.quotemanager.domain.PrivateMessage;
+import com.crommvardek.quotemanager.domain.mapper.JsonNodeToModelMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

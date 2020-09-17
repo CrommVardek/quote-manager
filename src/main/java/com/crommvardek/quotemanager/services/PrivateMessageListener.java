@@ -1,8 +1,8 @@
-package com.crommvardek.quoteproviderbot.services;
+package com.crommvardek.quotemanager.services;
 
-import com.crommvardek.quoteproviderbot.domain.exceptions.AuthorDoesNotExistsException;
-import com.crommvardek.quoteproviderbot.domain.PrivateMessage;
-import com.crommvardek.quoteproviderbot.webclient.RedditClient;
+import com.crommvardek.quotemanager.domain.exceptions.AuthorDoesNotExistsException;
+import com.crommvardek.quotemanager.domain.PrivateMessage;
+import com.crommvardek.quotemanager.webclient.RedditClient;
 import org.springframework.scheduling.annotation.Scheduled;
 import reactor.core.publisher.Flux;
 

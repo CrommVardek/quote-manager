@@ -1,6 +1,17 @@
-package com.crommvardek.quoteproviderbot.domain;
+package com.crommvardek.quotemanager.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Quote {
+
+    @Id
+    private Long Id;
+
+    @ManyToOne
+    private Author quoteAuthor;
 
     private String quoteText;
 
