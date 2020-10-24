@@ -6,12 +6,13 @@ import com.crommvardek.quotemanager.domain.exceptions.AuthorDoesNotExistsExcepti
 import com.crommvardek.quotemanager.services.AuthorFinder;
 import com.crommvardek.quotemanager.services.QuoteProvider;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
-@RestController
+@RestController("/quote-manager")
 public class QuoteManagerController {
 
     private final AuthorFinder authorFinder;
@@ -23,8 +24,8 @@ public class QuoteManagerController {
         this.quoteProvider = quoteProvider;
     }
 
-    @GetMapping
-    public Quote getQuote(String authorName){
+    @GetMapping("/quote")
+    public Quote getQuote(@RequestParam String authorName){
         try {
             Author author = authorFinder.getTheAuthor(authorName);
             return quoteProvider.getQuote(author);

@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  quote-manager-mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: quote-manager
+    ports:
+      - "3308:3306"

@@ -13,10 +13,9 @@ import java.nio.file.Paths;
 @Service
 public class QuoteProvider {
 
-    private final String authorsPath;
 
-    public QuoteProvider(@Value("${authorsPath}")String authorsPath) {
-        this.authorsPath = authorsPath;
+    public QuoteProvider() {
+
     }
 
     public Quote getQuote(Author author){

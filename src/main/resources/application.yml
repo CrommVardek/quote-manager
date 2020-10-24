@@ -9,10 +9,10 @@ spring:
             clientId:
             clientSecret:
   datasource:
-    url:
-    username: admin
+    url: jdbc:mysql://localhost:3308/quote-manager
+    username: root
     password: admin
-    driver-class-name:
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:

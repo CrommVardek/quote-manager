@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface QuoteRepository extends JpaRepository<Quote, Long> {
 
-    List<Quote> getAllQuotesFrom(Author author);
+    List<Quote> findByAuthor(Author author);
 
 }
