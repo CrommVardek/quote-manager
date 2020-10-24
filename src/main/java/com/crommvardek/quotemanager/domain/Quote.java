@@ -1,6 +1,7 @@
 package com.crommvardek.quotemanager.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -8,6 +9,7 @@ import javax.persistence.ManyToOne;
 public class Quote {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne

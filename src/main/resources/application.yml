@@ -8,3 +8,12 @@ spring:
           reddit:
             clientId:
             clientSecret:
+  datasource:
+    url:
+    username: admin
+    password: admin
+    driver-class-name:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: none

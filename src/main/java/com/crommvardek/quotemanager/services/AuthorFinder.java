@@ -3,12 +3,8 @@ package com.crommvardek.quotemanager.services;
 import com.crommvardek.quotemanager.domain.Author;
 import com.crommvardek.quotemanager.domain.exceptions.AuthorDoesNotExistsException;
 import com.crommvardek.quotemanager.infrastructure.repository.AuthorRepository;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 @Service
 public class AuthorFinder {
@@ -21,14 +17,11 @@ public class AuthorFinder {
 
     public Author getTheAuthor(String authorName) throws AuthorDoesNotExistsException {
 
-        //TODO search in database instead of the files
+        Author author = authorRepository.findByAuthorName(authorName);
 
+        if (author == null) throw new AuthorDoesNotExistsException();
 
-        if(true){
-            return new Author(authorName);
-        }
-
-        throw new AuthorDoesNotExistsException();
+        return author;
 
     }
 
