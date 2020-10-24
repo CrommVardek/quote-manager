@@ -3,11 +3,9 @@ package com.crommvardek.quotemanager.controller;
 import com.crommvardek.quotemanager.domain.Author;
 import com.crommvardek.quotemanager.domain.Quote;
 import com.crommvardek.quotemanager.domain.exceptions.AuthorDoesNotExistsException;
-import com.crommvardek.quotemanager.domain.PrivateMessage;
 import com.crommvardek.quotemanager.services.AuthorFinder;
 import com.crommvardek.quotemanager.services.QuoteConsumer;
 import com.crommvardek.quotemanager.services.QuoteProvider;
-import com.crommvardek.quotemanager.webclient.RedditClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,15 +18,11 @@ public class QuoteManagerController {
 
     private final QuoteProvider quoteProvider;
 
-    private final RedditClient redditClient;
-
     private final QuoteConsumer quoteConsumer;
 
-    public QuoteManagerController(AuthorFinder authorFinder, QuoteProvider quoteProvider, RedditClient redditClient
-    , QuoteConsumer quoteConsumer) {
+    public QuoteManagerController(AuthorFinder authorFinder, QuoteProvider quoteProvider, QuoteConsumer quoteConsumer) {
         this.authorFinder = authorFinder;
         this.quoteProvider = quoteProvider;
-        this.redditClient = redditClient;
         this.quoteConsumer = quoteConsumer;
     }
 

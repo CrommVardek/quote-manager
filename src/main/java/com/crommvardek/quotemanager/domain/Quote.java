@@ -8,10 +8,10 @@ import javax.persistence.ManyToOne;
 public class Quote {
 
     @Id
-    private Long Id;
+    private Long id;
 
     @ManyToOne
-    private Author quoteAuthor;
+    private Author author;
 
     private String quoteText;
 

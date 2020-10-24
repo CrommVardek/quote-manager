@@ -26,7 +26,7 @@ public class QuoteProvider {
 
     private void loadQuotes(Author author){
 
-        Path quotesFile = Paths.get(authorsPath, author.getName() + "_Quotes.txt");
+        Path quotesFile = Paths.get(authorsPath, author.getAuthorName() + "_Quotes.txt");
 
         try {
             Files.readAllLines(quotesFile).stream().forEach(s->author.addQuote(new Quote(s)));

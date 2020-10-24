@@ -12,7 +12,7 @@ import java.util.function.Predicate;
 public class Author {
 
     @Id
-    private Long Id;
+    private Long id;
 
     private final String authorName;
 
@@ -37,7 +37,7 @@ public class Author {
         if(!(quotes.stream().anyMatch(equal))) quotes.add(new Quote(quote.getText()));
     }
 
-    public String getName(){
+    public String getAuthorName(){
         return authorName;
     }
 
