@@ -9,7 +9,8 @@ spring:
             clientId:
             clientSecret:
   datasource:
-    url: jdbc:mysql://localhost:3308/quote-manager
+    initialization-mode: always
+    url: jdbc:mysql://localhost:3308/quotemanager
     username: root
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver

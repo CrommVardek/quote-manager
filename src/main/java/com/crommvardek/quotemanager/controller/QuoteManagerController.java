@@ -12,7 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
-@RestController("/quote-manager")
+@RestController
 public class QuoteManagerController {
 
     private final AuthorFinder authorFinder;
@@ -32,6 +32,11 @@ public class QuoteManagerController {
         } catch (AuthorDoesNotExistsException e) {
             throw new ResponseStatusException(NOT_FOUND, "Unable to find author");
         }
+    }
+
+    @GetMapping("/ping")
+    public String ping(){
+        return "quote-manager is running";
     }
 
 }
