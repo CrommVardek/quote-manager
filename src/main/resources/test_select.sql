@@ -1,5 +1,5 @@
 SELECT *
-FROM QUOTE;
+FROM quotemanager.QUOTE;
 
 Select *
-FROM AUTHOR;
+FROM quotemanager.AUTHOR;

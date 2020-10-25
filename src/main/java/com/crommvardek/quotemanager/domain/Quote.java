@@ -1,9 +1,6 @@
 package com.crommvardek.quotemanager.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Quote {
@@ -17,12 +14,40 @@ public class Quote {
 
     private String quoteText;
 
+    public Quote(){
+
+    }
+
     public Quote(String quoteText) {
         this.quoteText = quoteText;
     }
 
     public String getText(){
         return quoteText.trim();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public String getQuoteText() {
+        return quoteText;
+    }
+
+    public void setQuoteText(String quoteText) {
+        this.quoteText = quoteText;
     }
 
     @Override

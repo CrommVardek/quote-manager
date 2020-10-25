@@ -1,9 +1,6 @@
 package com.crommvardek.quotemanager.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -16,10 +13,13 @@ public class Author {
     @GeneratedValue
     private Long id;
 
-    private final String authorName;
+    private String authorName;
 
     @OneToMany
     private List<Quote> quotes;
+
+    public Author(){
+    }
 
     public Author(String authorName) {
         this.authorName = authorName;
@@ -39,8 +39,27 @@ public class Author {
         if(!(quotes.stream().anyMatch(equal))) quotes.add(new Quote(quote.getText()));
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getAuthorName(){
         return authorName;
     }
 
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public List<Quote> getQuotes() {
+        return quotes;
+    }
+
+    public void setQuotes(List<Quote> quotes) {
+        this.quotes = quotes;
+    }
 }

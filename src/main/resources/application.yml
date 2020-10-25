@@ -1,13 +1,6 @@
 spring:
   application:
-    name: Quote-Provider-Bot
-  security:
-    oauth2:
-      client:
-        registration:
-          reddit:
-            clientId:
-            clientSecret:
+    name: Quote-Manager
   datasource:
     initialization-mode: always
     url: jdbc:mysql://localhost:3308/quotemanager
@@ -15,6 +8,18 @@ spring:
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: none
+      dialect: org.hibernate.dialect.MySQL8Dialect
+      naming:
+        physical-strategy: com.crommvardek.quotemanager.config.UpperCaseNamingStrategy
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+    com:
+      zaxxer:
+        hikari:
+          HikariConfig: DEBUG
