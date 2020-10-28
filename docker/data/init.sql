@@ -40,7 +40,7 @@ VALUES
     (1, 'Little pig, little pig let me in. Or I''ll huff and I''ll puff and I''ll kick your ass in!'),
     (1, 'I''ve got balls of steel.'),
     (1, 'Hail to the king, baby!'),
-    (1, 'It’s time to kick ass and chew bubble gum...and I’m all outta gum.')
+    (1, 'It''s time to kick ass and chew bubble gum...and I''m all outta gum.')
 ;
 
 COMMIT;

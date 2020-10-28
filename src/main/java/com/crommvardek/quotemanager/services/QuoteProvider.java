@@ -1,14 +1,8 @@
 package com.crommvardek.quotemanager.services;
 
-import com.crommvardek.quotemanager.domain.Author;
-import com.crommvardek.quotemanager.domain.Quote;
-import org.springframework.beans.factory.annotation.Value;
+import com.crommvardek.quotemanager.domain.author.Author;
+import com.crommvardek.quotemanager.domain.quote.Quote;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 @Service
 public class QuoteProvider {
@@ -18,8 +12,21 @@ public class QuoteProvider {
 
     }
 
-    public Quote getQuote(Author author){
-        return author.getAnyQuote();
+    public String provideQuoteFrom(Author author) {
+        return buildQuote(author).toString();
+    }
+
+    private StringBuilder buildQuote(Author author) {
+        StringBuilder quoteText = new StringBuilder();
+        quoteText.append(author.getAuthorName());
+        quoteText.append(" : \"");
+        quoteText.append(getQuote(author).getQuoteText());
+        quoteText.append("\"");
+        return quoteText;
+    }
+
+    private Quote getQuote(Author author){
+        return author.getRandomQuote();
     }
 
 }

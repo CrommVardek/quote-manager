@@ -1,7 +1,7 @@
 package com.crommvardek.quotemanager.services;
 
-import com.crommvardek.quotemanager.domain.Author;
-import com.crommvardek.quotemanager.domain.exceptions.AuthorDoesNotExistsException;
+import com.crommvardek.quotemanager.domain.author.Author;
+import com.crommvardek.quotemanager.domain.author.AuthorDoesNotExistsException;
 import com.crommvardek.quotemanager.infrastructure.repository.AuthorRepository;
 import org.springframework.stereotype.Service;
 

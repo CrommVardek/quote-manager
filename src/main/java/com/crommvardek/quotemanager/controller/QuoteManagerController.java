@@ -1,8 +1,7 @@
 package com.crommvardek.quotemanager.controller;
 
-import com.crommvardek.quotemanager.domain.Author;
-import com.crommvardek.quotemanager.domain.Quote;
-import com.crommvardek.quotemanager.domain.exceptions.AuthorDoesNotExistsException;
+import com.crommvardek.quotemanager.domain.author.Author;
+import com.crommvardek.quotemanager.domain.author.AuthorDoesNotExistsException;
 import com.crommvardek.quotemanager.services.AuthorFinder;
 import com.crommvardek.quotemanager.services.QuoteProvider;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,10 +24,10 @@ public class QuoteManagerController {
     }
 
     @GetMapping("/quote")
-    public Quote getQuote(@RequestParam String authorName){
+    public String getQuote(@RequestParam String authorName){
         try {
             Author author = authorFinder.getTheAuthor(authorName);
-            return quoteProvider.getQuote(author);
+            return quoteProvider.provideQuoteFrom(author);
         } catch (AuthorDoesNotExistsException e) {
             throw new ResponseStatusException(NOT_FOUND, "Unable to find author");
         }

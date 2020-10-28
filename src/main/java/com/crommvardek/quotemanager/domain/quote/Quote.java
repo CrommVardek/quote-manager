@@ -1,4 +1,6 @@
-package com.crommvardek.quotemanager.domain;
+package com.crommvardek.quotemanager.domain.quote;
+
+import com.crommvardek.quotemanager.domain.author.Author;
 
 import javax.persistence.*;
 
@@ -10,6 +12,7 @@ public class Quote {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name="AUTHOR_ID")
     private Author author;
 
     private String quoteText;
@@ -18,41 +21,27 @@ public class Quote {
 
     }
 
-    public Quote(String quoteText) {
+    public Quote(Author author, String quoteText) {
+        this.author = author;
         this.quoteText = quoteText;
-    }
-
-    public String getText(){
-        return quoteText.trim();
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Author getAuthor() {
         return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
     }
 
     public String getQuoteText() {
         return quoteText;
     }
 
-    public void setQuoteText(String quoteText) {
-        this.quoteText = quoteText;
-    }
 
     @Override
     public boolean equals(Object o){
-        return ((o instanceof Quote) && (((Quote) o).getText().equals(getText())));
+        return ((o instanceof Quote) && (((Quote) o).getQuoteText().equals(getQuoteText())));
     }
 
     @Override
